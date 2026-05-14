@@ -46,3 +46,14 @@ Hero 배경 이미지는 `public/assets/hero-ai-engineer.png`에 있습니다.
 4. `main` 브랜치에 push하면 workflow가 실행되고 `dist` 결과물이 Pages에 배포됩니다.
 
 `vite.config.js`는 GitHub Actions 환경에서 저장소 이름을 읽어 `base` 경로를 자동 설정합니다. 로컬 개발 환경에서는 `/`를 사용합니다.
+
+## GitHub Pages에서 빈 화면이 보일 때
+
+대부분 JS/CSS 파일 경로가 맞지 않을 때 발생합니다.
+
+- `https://계정명.github.io/저장소명/` 형태의 프로젝트 Pages: `base`가 `/저장소명/`이어야 합니다.
+- `https://계정명.github.io/` 형태의 사용자 Pages: `base`가 `/`이어야 합니다.
+
+현재 `vite.config.js`는 두 경우를 자동으로 구분합니다. 설정 변경 후에는 반드시 commit 후 `main` 브랜치에 다시 push해서 GitHub Actions 배포가 새로 실행되게 해야 합니다.
+
+GitHub 저장소의 `Settings > Pages`에서 Source가 `GitHub Actions`로 되어 있는지도 확인하세요.
