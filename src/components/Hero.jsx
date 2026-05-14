@@ -1,5 +1,8 @@
-import { ArrowDown, Github, Mail } from "lucide-react";
+import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import { profile } from "../data/portfolio.js";
+
+const portfolioUrl =
+  "https://treasure-flare-e03.notion.site/AI-Agent-LLM-Java-Spring-48e039946151831e92b0817e1b7f3b43?pvs=143";
 
 export default function Hero() {
   return (
@@ -40,11 +43,13 @@ export default function Hero() {
               <ArrowDown size={18} />
             </a>
             <a
-              href="mailto:jhchoi1997@gmail.com"
+              href={portfolioUrl}
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+              target="_blank"
+              rel="noreferrer"
             >
-              <Mail size={18} />
-              Contact
+              <ExternalLink size={18} />
+              Portfolio
             </a>
             <a
               href="https://github.com/norwegianwood97"
