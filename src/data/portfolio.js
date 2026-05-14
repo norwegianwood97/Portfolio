@@ -151,13 +151,10 @@ export const experiences = [
 export const contacts = [
   {
     label: "Portfolio",
-    value:
-      "https://treasure-flare-e03.notion.site/AI-Agent-LLM-Java-Spring-48e039946151831e92b0817e1b7f3b43?pvs=143",
     href: "https://treasure-flare-e03.notion.site/AI-Agent-LLM-Java-Spring-48e039946151831e92b0817e1b7f3b43?pvs=143",
   },
   {
     label: "GitHub",
-    value: "https://github.com/norwegianwood97",
     href: "https://github.com/norwegianwood97",
   },
 ];
