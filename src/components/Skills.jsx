@@ -8,7 +8,7 @@ export default function Skills() {
         <SectionTitle
           eyebrow="Skills"
           title="실무와 프로젝트 흐름에 맞춘 기술 스택"
-          description="백엔드 API 개발, LLM 프로토타입, 데이터 자동화, 클라우드 운영까지 프로젝트 성격에 맞춰 조합해 사용했습니다."
+          description="백엔드 API 개발, LLM 프로토타입, 데이터 자동화, 클라우드 운영 실습까지 프로젝트 성격에 맞춰 조합해 사용했습니다."
         />
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

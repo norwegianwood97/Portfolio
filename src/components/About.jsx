@@ -14,9 +14,14 @@ export default function About() {
       <div className="section-shell">
         <SectionTitle
           eyebrow="About"
-          title="백엔드에서 AI Agent 운영까지 연결하는 개발자"
-          description={profile.about}
+          title="백엔드 실무와 AI 활용 경험을 함께 쌓아왔습니다"
         />
+
+        <div className="mb-10 max-w-3xl space-y-4 text-base leading-8 text-slate-600 sm:text-lg">
+          {profile.about.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((item) => (

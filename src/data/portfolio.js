@@ -1,8 +1,13 @@
 export const profile = {
+  name: "최준혁",
   title: "Backend / AI Engineer",
-  summary: "AI Agent와 LLM 활용 경험을 보유한 백엔드 개발자 최준혁입니다.",
-  about:
-    "백엔드 개발을 중심으로 REST API 개발, Java/JSP 기반 서비스 유지보수, Python 자동화, Hugging Face 기반 소형 LLM 챗봇 개발을 경험했습니다. 최근에는 AWS EC2 Ubuntu 환경에서 OpenClaw 서버와 OpenAI API, Telegram Bot 연동을 구성하며 AI Agent 기반 개발 및 운영 역량을 쌓고 있습니다.",
+  heroTitle: "Backend / AI Engineer",
+  summary:
+    "Java/Python 기반 개발 경험과 서버 운영 경험을 바탕으로, LLM·자동화·백엔드 기능을 실제 서비스 흐름에 연결해왔습니다.",
+  about: [
+    "백엔드 개발 실무에서는 Java/JSP 기반 레거시 시스템 유지보수, REST API 개발, 오류 원인 분석과 예외 처리 개선을 경험했습니다. 또한 Python 기반 병원 데이터 크롤링 자동화와 Hugging Face 기반 소형 LLM 챗봇 프로토타입 개발을 수행하며, 데이터 수집부터 모델 활용, API 연동까지 이어지는 흐름을 경험했습니다.",
+    "최근에는 AWS EC2 Ubuntu 환경에 OpenClaw 서버를 구축하고 OpenAI API 및 Telegram Bot 연동을 구성하며, AI Agent를 실제 서버 환경에서 실행하고 운영하는 과정을 실습했습니다.",
+  ],
 };
 
 export const skills = [
@@ -55,7 +60,6 @@ export const projects = [
     title: "소형 LLM 기반 고객 질의응답 챗봇 프로토타입",
     type: "Work Project / AI / LLM / Backend",
     period: "2025.06 ~ 2026.01",
-    detailLink: "https://www.notion.so/llm-chatbot-detail-placeholder",
     stack: [
       "Python",
       "PyTorch",
@@ -97,7 +101,6 @@ export const projects = [
     title: "OpenClaw EC2 AI Agent Lab",
     type: "Personal Project / AI Agent / Infra",
     period: "2026.05",
-    detailLink: "https://www.notion.so/openclaw-ec2-ai-agent-lab-placeholder",
     stack: [
       "AWS EC2",
       "Ubuntu",
@@ -118,8 +121,6 @@ export const projects = [
     title: "STOCKING — 모의 주식 투자 서비스",
     type: "Team Project / Backend / Performance",
     period: "2024.03 ~ 2024.05",
-    detailLink:
-      "https://treasure-flare-e03.notion.site/Stocking-36003994615180ea8901d486d1995d45?pvs=21",
     highlight:
       "TPS +660.7% 개선 / 평균 응답시간 85.39% 감소 / 10만 건 부하 테스트",
     stack: [
@@ -129,20 +130,19 @@ export const projects = [
       "Kafka",
       "Docker",
       "AWS ECS",
-      "GitHub Actions",
       "JMeter",
       "Prometheus",
       "Grafana",
     ],
     details: [
       "Node.js 기반 모의 주식 투자 서비스 백엔드 개발",
-      "MySQL과 Redis를 활용한 주문·매칭 데이터 처리 구조 개선",
+      "Redis 기반 주문/매칭 처리 구조 개선",
       "Kafka 기반 메시지 큐를 적용하여 주문 처리 흐름 분리",
-      "Prisma, Passport, WebSocket 기반 데이터 접근·인증·실시간 통신 구현",
       "JMeter 기반 부하 테스트 수행",
-      "TPS 77.6/s → 590.3/s 개선, 평균 응답시간 1211.3ms → 177ms 감소",
-      "Docker, ECR, ECS, ALB를 활용한 배포 및 확장 구조 적용",
-      "Prometheus, Grafana, node-exporter 기반 모니터링 구성",
+      "TPS 77.6/s → 590.3/s 개선",
+      "평균 응답시간 1211.3ms → 177ms 감소",
+      "Docker, ECR, ECS, ALB 기반 배포 구조 적용",
+      "Prometheus, Grafana 기반 모니터링 구성",
       "항해99 기수 최우수 프로젝트 선정",
     ],
   },
@@ -150,7 +150,6 @@ export const projects = [
     title: "Python 기반 병원 데이터 크롤링 자동화 시스템",
     type: "Work Project / Automation / Data",
     period: "2025.05 ~ 2025.06",
-    detailLink: "https://www.notion.so/hospital-data-crawling-placeholder",
     stack: ["Python", "Selenium", "BeautifulSoup", "MySQL", "PostgreSQL"],
     details: [
       "병원 데이터 크롤링 자동화 로직 개발",
@@ -166,11 +165,8 @@ export const projects = [
     period: "2026.01 ~ 2026.05",
     stack: ["React", "JavaScript", "Node.js", "AWS"],
     details: [
-      "클라이언트 요구사항 분석",
-      "웹사이트 화면 구성 및 기능 설계",
-      "Node.js 기반 백엔드 API 개발",
-      "AWS 환경의 서비스 배포 경험",
-      "사용자 피드백 반영 및 오류 수정",
+      "클라이언트 요구사항 기반 소규모 웹사이트 제작 및 배포 경험",
+      "화면 구성, Node.js 기반 API 개발, AWS 배포, 피드백 반영 수행",
     ],
   },
 ];

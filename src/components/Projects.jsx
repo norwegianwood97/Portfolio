@@ -9,14 +9,13 @@ export default function Projects() {
         <SectionTitle
           eyebrow="Projects"
           title="Backend, AI, 자동화 중심 프로젝트"
-          description="Notion 상세 포트폴리오의 프로젝트별 기술 스택과 맞춰 역할, 기간, 성과를 정리했습니다."
         />
 
-        <div className="grid items-stretch gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:border-cyan-300"
+              className="group flex flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-cyan-300"
             >
               <div className="flex items-start justify-between gap-5">
                 <div>
@@ -41,14 +40,14 @@ export default function Projects() {
                 {project.stack.map((item) => (
                   <span
                     key={`${project.title}-${item}`}
-                    className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600"
+                    className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600"
                   >
                     {item}
                   </span>
                 ))}
               </div>
 
-              <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-600">
+              <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-600">
                 {project.details.map((detail) => (
                   <li key={detail} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-600" />
@@ -62,20 +61,6 @@ export default function Projects() {
                   {project.highlight}
                 </p>
               )}
-
-              <div className="mt-auto pt-6">
-                {project.detailLink && (
-                  <a
-                    href={project.detailLink}
-                    className="focus-ring inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-sm font-bold text-navy-900 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    자세히 보기
-                    <ArrowUpRight size={16} aria-hidden="true" />
-                  </a>
-                )}
-              </div>
             </article>
           ))}
         </div>
