@@ -1,6 +1,6 @@
-import { ArrowUpRight } from 'lucide-react';
-import SectionTitle from './SectionTitle.jsx';
-import { projects } from '../data/portfolio.js';
+import { ArrowUpRight } from "lucide-react";
+import SectionTitle from "./SectionTitle.jsx";
+import { projects } from "../data/portfolio.js";
 
 export default function Projects() {
   return (
@@ -8,21 +8,25 @@ export default function Projects() {
       <div className="section-shell">
         <SectionTitle
           eyebrow="Projects"
-          title="Backend, AI, Automation 중심 프로젝트"
-          description="업무 프로젝트는 보안 범위 안에서 역할과 적용 기술을 중심으로 정리했습니다."
+          title="Backend, AI, 자동화 중심 프로젝트"
         />
 
         <div className="grid gap-5 lg:grid-cols-2">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <article
               key={project.title}
-              className="group rounded-lg border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-cyan-300"
+              className="group flex flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-cyan-300"
             >
               <div className="flex items-start justify-between gap-5">
                 <div>
                   <p className="text-sm font-bold text-cyan-700">
                     {project.type}
                   </p>
+                  {project.period && (
+                    <p className="mt-2 text-sm font-semibold text-slate-500">
+                      {project.period}
+                    </p>
+                  )}
                   <h3 className="mt-3 text-xl font-bold leading-8 text-navy-950">
                     {project.title}
                   </h3>
@@ -52,11 +56,25 @@ export default function Projects() {
                 ))}
               </ul>
 
-              {index === 2 && (
+              {project.highlight && (
                 <p className="mt-6 rounded-lg bg-navy-50 px-4 py-3 text-sm font-bold text-navy-900">
-                  성과: TPS 약 660.7% 개선 · 10만 건 동시 요청 처리 테스트
+                  {project.highlight}
                 </p>
               )}
+
+              <div className="mt-auto pt-6">
+                {project.detailLink && (
+                  <a
+                    href={project.detailLink}
+                    className="focus-ring inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-sm font-bold text-navy-900 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    자세히 보기
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>

@@ -1,5 +1,5 @@
-import SectionTitle from './SectionTitle.jsx';
-import { experiences } from '../data/portfolio.js';
+import SectionTitle from "./SectionTitle.jsx";
+import { experiences } from "../data/portfolio.js";
 
 export default function Experience() {
   return (
@@ -7,8 +7,8 @@ export default function Experience() {
       <div className="section-shell">
         <SectionTitle
           eyebrow="Experience"
-          title="AI와 백엔드 경험이 이어지는 타임라인"
-          description="데이터 라벨링과 NLP 연구실 경험에서 시작해 백엔드 실무, LLM 프로토타입, Agent 서버 운영 실습까지 확장해 왔습니다."
+          title="AI와 백엔드 경험으로 이어지는 타임라인"
+          description="데이터 라벨링과 NLP 연구실 경험에서 시작해 백엔드 실무, LLM 프로토타입, Agent 서버 운영 실습까지 확장해왔습니다."
         />
 
         <div className="relative border-l border-slate-300 pl-6 sm:pl-8">

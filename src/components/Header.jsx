@@ -6,7 +6,6 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -17,6 +16,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <nav className="section-shell flex h-16 items-center justify-between">
+        <a
+          href="#hero"
+          className="focus-ring text-sm font-bold text-navy-950 transition hover:text-cyan-700"
+        >
+          최준혁 Portfolio
+        </a>
+
         <div className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
             <a
@@ -35,7 +41,11 @@ export default function Header() {
           aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
           onClick={() => setIsOpen((value) => !value)}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? (
+            <X size={20} aria-hidden="true" />
+          ) : (
+            <Menu size={20} aria-hidden="true" />
+          )}
         </button>
       </nav>
 

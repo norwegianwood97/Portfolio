@@ -1,59 +1,123 @@
 # 최준혁 Portfolio
 
+배포 링크: https://norwegianwood97.github.io/Portfolio_260514/
+
 React, Vite, Tailwind CSS로 만든 Backend / AI Agent Engineer 포트폴리오입니다.
+
+## 프로젝트 소개
+
+백엔드 개발, AI/LLM 프로토타입, 데이터 자동화, 인프라 운영 실습 경험을 채용 담당자가 빠르게 확인할 수 있도록 구성한 개인 포트폴리오 웹사이트입니다.
+
+주요 섹션은 다음과 같습니다.
+
+- Hero: 핵심 포지션, 주요 링크, 이메일 복사 버튼
+- About: 개발 방향성과 경험 요약
+- Skills: Backend, AI/LLM, Database/Cache, Automation, Infra/Tools 분류
+- Projects: 프로젝트별 역할, 기술 스택, 성과, 상세 링크
+- Experience: 업무 및 연구/데이터 경험 타임라인
 
 ## 기술 스택
 
 - React
 - Vite
 - Tailwind CSS
+- lucide-react
 - GitHub Actions
 - GitHub Pages
 
-## 로컬 실행
+## 로컬 실행 방법
 
 ```bash
 npm install
 npm run dev
 ```
 
-빌드 확인:
+Vite 개발 서버가 출력하는 로컬 주소로 접속해 확인할 수 있습니다.
+
+## 빌드 방법
 
 ```bash
 npm run build
+```
+
+빌드 결과물은 `dist/` 디렉터리에 생성됩니다.
+
+빌드 결과를 로컬에서 미리 확인하려면 다음 명령어를 사용할 수 있습니다.
+
+```bash
 npm run preview
+```
+
+## GitHub Pages 배포 방법
+
+이 저장소는 `.github/workflows/deploy.yml`을 통해 GitHub Pages에 배포할 수 있습니다.
+
+1. 변경사항을 `main` 브랜치에 push합니다.
+2. GitHub 저장소의 `Settings > Pages`로 이동합니다.
+3. `Build and deployment`의 Source를 `GitHub Actions`로 설정합니다.
+4. workflow가 실행되면 `npm run build` 결과물인 `dist/`가 GitHub Pages로 배포됩니다.
+
+현재 Vite base 설정은 GitHub Pages 프로젝트 주소에 맞춰 유지되어 있습니다.
+
+```js
+base: "/Portfolio_260514/",
+```
+
+프로젝트 페이지 주소:
+
+```text
+https://norwegianwood97.github.io/Portfolio_260514/
 ```
 
 ## 정보 수정
 
-포트폴리오 내용은 `src/data/portfolio.js`에서 수정합니다.
+포트폴리오의 주요 내용은 `src/data/portfolio.js`에서 수정합니다.
 
 - 이름, 타이틀, 소개 문구
 - Skills
-- Projects
+- Projects 및 상세 링크
 - Experience
-- Contact placeholder 링크
+- Hero 버튼 링크 및 이메일 주소
 
 Hero 배경 이미지는 `public/assets/hero-ai-engineer.png`에 있습니다.
 
-## GitHub Pages 배포
+## Git 추적 제외
 
-이 저장소는 `.github/workflows/deploy.yml`을 통해 GitHub Pages에 배포할 수 있습니다.
+로컬 산출물과 캐시 파일은 `.gitignore`에서 제외합니다.
 
-1. GitHub 저장소에 코드를 push합니다.
-2. GitHub 저장소의 `Settings > Pages`로 이동합니다.
-3. `Build and deployment`의 Source를 `GitHub Actions`로 설정합니다.
-4. `main` 브랜치에 push하면 workflow가 실행되고 `dist` 결과물이 Pages에 배포됩니다.
+- `node_modules/`
+- `dist/`
+- `.env`, `.env.*`, `!.env.example`
+- `.DS_Store`, `Thumbs.db`
+- `.history/`
+- `.lh/`
+- `.cache/`
+- `.vite/`
+- `coverage/`
+- `*.log`
 
-`vite.config.js`는 GitHub Actions 환경에서 저장소 이름을 읽어 `base` 경로를 자동 설정합니다. 로컬 개발 환경에서는 `/`를 사용합니다.
+이미 `.history/` 또는 `.lh/` 같은 로컬 파일이 Git에 추적 중이라면 아래 명령으로 인덱스에서만 제거합니다.
 
-## GitHub Pages에서 빈 화면이 보일 때
+```bash
+git rm -r --cached .history .lh
+```
 
-대부분 JS/CSS 파일 경로가 맞지 않을 때 발생합니다.
+## GitHub Repository About 설정 추천
 
-- `https://계정명.github.io/저장소명/` 형태의 프로젝트 Pages: `base`가 `/저장소명/`이어야 합니다.
-- `https://계정명.github.io/` 형태의 사용자 Pages: `base`가 `/`이어야 합니다.
+Description:
 
-현재 `vite.config.js`는 두 경우를 자동으로 구분합니다. 설정 변경 후에는 반드시 commit 후 `main` 브랜치에 다시 push해서 GitHub Actions 배포가 새로 실행되게 해야 합니다.
+```text
+Backend / AI Agent Engineer portfolio built with React, Vite, Tailwind CSS
+```
 
-GitHub 저장소의 `Settings > Pages`에서 Source가 `GitHub Actions`로 되어 있는지도 확인하세요.
+Website:
+
+```text
+https://norwegianwood97.github.io/Portfolio_260514/
+```
+
+Topics:
+
+```text
+portfolio, react, vite, tailwindcss, github-pages, backend, ai-agent, llm
+```

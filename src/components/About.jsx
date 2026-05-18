@@ -1,11 +1,11 @@
-import SectionTitle from './SectionTitle.jsx';
-import { profile } from '../data/portfolio.js';
+import SectionTitle from "./SectionTitle.jsx";
+import { profile } from "../data/portfolio.js";
 
 const highlights = [
-  'Java/Spring 기반 REST API 개발',
-  '소형 LLM 챗봇 프로토타입',
-  'Python 데이터 자동화',
-  'EC2 기반 AI Agent 서버 운영 실습',
+  "Java/Spring 기반 REST API 개발",
+  "소형 LLM 챗봇 프로토타입",
+  "Python 데이터 자동화",
+  "EC2 기반 AI Agent 서버 운영 실습",
 ];
 
 export default function About() {

@@ -1,5 +1,5 @@
-import SectionTitle from './SectionTitle.jsx';
-import { skills } from '../data/portfolio.js';
+import SectionTitle from "./SectionTitle.jsx";
+import { skills } from "../data/portfolio.js";
 
 export default function Skills() {
   return (
@@ -7,11 +7,11 @@ export default function Skills() {
       <div className="section-shell">
         <SectionTitle
           eyebrow="Skills"
-          title="실무와 실험을 함께 쌓아온 기술 스택"
-          description="백엔드 API 개발, LLM 프로토타이핑, 데이터 자동화, 클라우드 운영 실습까지 프로젝트 성격에 맞춰 조합해 사용했습니다."
+          title="실무와 프로젝트 흐름에 맞춘 기술 스택"
+          description="백엔드 API 개발, LLM 프로토타입, 데이터 자동화, 클라우드 운영 실습까지 프로젝트 성격에 맞춰 조합해 사용했습니다."
         />
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {skills.map((group) => (
             <section
               key={group.category}
