@@ -1,8 +1,6 @@
 export const profile = {
-  name: "최준혁",
-  title: "Backend / AI Agent Engineer",
-  summary:
-    "Java/Spring 기반 백엔드 개발과 Python 기반 AI/LLM 프로젝트 경험을 함께 쌓고 있습니다. REST API, 데이터 자동화, 소형 LLM 챗봇 프로토타입, AWS EC2 기반 AI Agent 서버 운영까지 실무에 가까운 흐름으로 확장해왔습니다.",
+  title: "Backend / AI Engineer",
+  summary: "AI Agent와 LLM 활용 경험을 보유한 백엔드 개발자 최준혁입니다.",
   about:
     "백엔드 개발을 중심으로 REST API 개발, Java/JSP 기반 서비스 유지보수, Python 자동화, Hugging Face 기반 소형 LLM 챗봇 개발을 경험했습니다. 최근에는 AWS EC2 Ubuntu 환경에서 OpenClaw 서버와 OpenAI API, Telegram Bot 연동을 구성하며 AI Agent 기반 개발 및 운영 역량을 쌓고 있습니다.",
 };
@@ -10,7 +8,7 @@ export const profile = {
 export const skills = [
   {
     category: "Backend",
-    items: ["Java", "Spring Boot", "JSP", "REST API", "Flask", "Express.js"],
+    items: ["Java", "JSP", "REST API", "Node.js", "Express.js", "Flask"],
   },
   {
     category: "AI / LLM",
@@ -25,22 +23,30 @@ export const skills = [
   },
   {
     category: "Database / Cache",
-    items: ["MySQL", "PostgreSQL", "Redis"],
+    items: ["MySQL", "PostgreSQL", "Redis", "Prisma"],
   },
   {
     category: "Automation",
-    items: ["Selenium", "BeautifulSoup"],
+    items: ["Selenium", "BeautifulSoup", "JMeter"],
   },
   {
     category: "Infra / Tools",
     items: [
       "AWS EC2",
+      "AWS ECS",
+      "AWS ALB",
       "Docker",
       "GitHub Actions",
       "Linux CLI",
       "systemd",
-      "RabbitMQ",
+      "SVN",
+      "Eclipse",
+      "Tomcat",
     ],
+  },
+  {
+    category: "Monitoring / Messaging",
+    items: ["Kafka", "Prometheus", "Grafana", "WebSocket"],
   },
 ];
 
@@ -69,7 +75,15 @@ export const projects = [
     title: "병원 원가관리·분석 솔루션 백엔드 유지보수 및 기능개발",
     type: "Work Project / Backend / Legacy Maintenance",
     period: "2025.03 ~ 2026.01",
-    stack: ["Java", "JSP", "JavaScript", "Tomcat", "SVN", "Eclipse", "REST API"],
+    stack: [
+      "Java",
+      "JSP",
+      "JavaScript",
+      "Tomcat",
+      "SVN",
+      "Eclipse",
+      "REST API",
+    ],
     details: [
       "고객사 병원의 원가관리·분석 솔루션에서 Java/JSP 기반 백엔드 유지보수와 기능개발 수행",
       "고객사 요구사항에 따른 기능 수정, 신규 기능 개발, REST API 개발 및 기존 API 수정",
@@ -91,6 +105,7 @@ export const projects = [
       "OpenAI API",
       "Telegram Bot",
       "systemd",
+      "Linux CLI",
     ],
     details: [
       "AWS EC2 Ubuntu 환경에 OpenClaw 서버 구축",
@@ -100,17 +115,34 @@ export const projects = [
     ],
   },
   {
-    title: "STOCKING - 모의 주식 투자 서비스",
+    title: "STOCKING — 모의 주식 투자 서비스",
     type: "Team Project / Backend / Performance",
     period: "2024.03 ~ 2024.05",
-    detailLink: "https://www.notion.so/stocking-detail-placeholder",
-    highlight: "성과: TPS +660.7% 개선 / 10만 건 동시 요청 처리 테스트",
-    stack: ["Spring Boot", "JPA", "MySQL", "Redis", "RabbitMQ", "AWS", "JUnit"],
+    detailLink:
+      "https://treasure-flare-e03.notion.site/Stocking-36003994615180ea8901d486d1995d45?pvs=21",
+    highlight:
+      "TPS +660.7% 개선 / 평균 응답시간 85.39% 감소 / 10만 건 부하 테스트",
+    stack: [
+      "Node.js",
+      "MySQL",
+      "Redis",
+      "Kafka",
+      "Docker",
+      "AWS ECS",
+      "GitHub Actions",
+      "JMeter",
+      "Prometheus",
+      "Grafana",
+    ],
     details: [
-      "모의 주식 주문/거래 API 개발",
-      "Redis 캐싱 및 RabbitMQ 기반 비동기 처리 구조 적용",
-      "TPS +660.7% 성능 개선",
-      "10만 건 동시 요청 처리 부하 테스트",
+      "Node.js 기반 모의 주식 투자 서비스 백엔드 개발",
+      "MySQL과 Redis를 활용한 주문·매칭 데이터 처리 구조 개선",
+      "Kafka 기반 메시지 큐를 적용하여 주문 처리 흐름 분리",
+      "Prisma, Passport, WebSocket 기반 데이터 접근·인증·실시간 통신 구현",
+      "JMeter 기반 부하 테스트 수행",
+      "TPS 77.6/s → 590.3/s 개선, 평균 응답시간 1211.3ms → 177ms 감소",
+      "Docker, ECR, ECS, ALB를 활용한 배포 및 확장 구조 적용",
+      "Prometheus, Grafana, node-exporter 기반 모니터링 구성",
       "항해99 기수 최우수 프로젝트 선정",
     ],
   },

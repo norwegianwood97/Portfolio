@@ -78,9 +78,6 @@ export default function Hero() {
 
       <div className="section-shell flex min-h-[calc(100vh-5.5rem)] items-center py-20 sm:py-24">
         <div className="max-w-3xl">
-          <p className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur">
-            Backend / AI Agent / LLM
-          </p>
           <h1 className="text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl">
             {profile.name}
           </h1>
@@ -92,13 +89,6 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a
-              href="#projects"
-              className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-navy-950 shadow-soft transition hover:-translate-y-0.5 hover:bg-cyan-50"
-            >
-              프로젝트 보기
-              <ArrowDown size={18} aria-hidden="true" />
-            </a>
             <a
               href={portfolioUrl}
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
@@ -139,7 +129,11 @@ export default function Hero() {
           role="status"
           aria-live="polite"
         >
-          <Check size={16} className="shrink-0 text-cyan-300" aria-hidden="true" />
+          <Check
+            size={16}
+            className="shrink-0 text-cyan-300"
+            aria-hidden="true"
+          />
           <span>이메일이 복사되었습니다</span>
         </div>
       )}
