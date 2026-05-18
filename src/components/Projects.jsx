@@ -61,20 +61,6 @@ export default function Projects() {
                   {project.highlight}
                 </p>
               )}
-
-              <div className="mt-auto pt-6">
-                {project.detailLink && (
-                  <a
-                    href={project.detailLink}
-                    className="focus-ring inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-sm font-bold text-navy-900 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-700"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    자세히 보기
-                    <ArrowUpRight size={16} aria-hidden="true" />
-                  </a>
-                )}
-              </div>
             </article>
           ))}
         </div>
