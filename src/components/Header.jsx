@@ -21,7 +21,7 @@ export default function Header({ currentPath = "/" }) {
           className="focus-ring text-sm font-bold text-navy-950 transition hover:text-cyan-700"
           onClick={closeMenu}
         >
-          최준혁 Portfolio
+          Choi's Portfolio
         </a>
 
         <div className="hidden items-center gap-7 md:flex">

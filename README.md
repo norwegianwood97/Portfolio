@@ -1,6 +1,6 @@
 # 최준혁 Portfolio
 
-배포 링크: https://norwegianwood97.github.io/PortfolioSite/
+배포 링크: https://norwegianwood97.github.io/Portfolio/
 
 React, Vite, Tailwind CSS로 만든 Backend / AI Agent Engineer 포트폴리오입니다.
 
@@ -59,7 +59,7 @@ npm run preview
 Vite base 설정은 GitHub Pages 프로젝트 주소에 맞춰 유지합니다.
 
 ```js
-base: "/PortfolioSite/",
+base: "/Portfolio/",
 ```
 
 ## 정보 수정
@@ -115,7 +115,7 @@ Backend / AI Agent Engineer portfolio built with React, Vite, Tailwind CSS
 Website:
 
 ```text
-https://norwegianwood97.github.io/PortfolioSite/
+https://norwegianwood97.github.io/Portfolio/
 ```
 
 Topics:
