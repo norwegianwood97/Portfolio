@@ -2,13 +2,13 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "Home", href: "#/", path: "/" },
+  { label: "About", href: "#/about", path: "/about" },
+  { label: "Skills", href: "#/skills", path: "/skills" },
+  { label: "Projects", href: "#/projects", path: "/projects" },
 ];
 
-export default function Header() {
+export default function Header({ currentPath = "/" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
@@ -17,8 +17,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
       <nav className="section-shell flex h-16 items-center justify-between">
         <a
-          href="#hero"
+          href="#/"
           className="focus-ring text-sm font-bold text-navy-950 transition hover:text-cyan-700"
+          onClick={closeMenu}
         >
           최준혁 Portfolio
         </a>
@@ -28,7 +29,12 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="focus-ring text-sm font-medium text-slate-600 transition hover:text-navy-900"
+              className={`focus-ring text-sm transition hover:text-navy-900 ${
+                currentPath === item.path
+                  ? "font-semibold text-navy-950 underline decoration-cyan-500 decoration-2 underline-offset-8"
+                  : "font-medium text-slate-600"
+              }`}
+              aria-current={currentPath === item.path ? "page" : undefined}
             >
               {item.label}
             </a>
@@ -56,8 +62,13 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="focus-ring rounded-lg px-2 py-3 text-sm font-medium text-slate-700 transition hover:bg-navy-50 hover:text-navy-900"
+                className={`focus-ring rounded-lg px-2 py-3 text-sm transition hover:bg-navy-50 hover:text-navy-900 ${
+                  currentPath === item.path
+                    ? "font-semibold text-navy-950"
+                    : "font-medium text-slate-700"
+                }`}
                 onClick={closeMenu}
+                aria-current={currentPath === item.path ? "page" : undefined}
               >
                 {item.label}
               </a>

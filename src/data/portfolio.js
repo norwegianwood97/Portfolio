@@ -1,7 +1,7 @@
 export const profile = {
   name: "최준혁",
   title: "Backend / AI Engineer",
-  heroTitle: "Backend / AI Engineer",
+  homeTitle: "Backend / AI Engineer",
   summary:
     "Java/Python 기반 개발 경험과 서버 운영 경험을 바탕으로, LLM·자동화·백엔드 기능을 실제 서비스 흐름에 연결해왔습니다.",
   about: [
@@ -57,7 +57,7 @@ export const skills = [
 
 export const projects = [
   {
-    title: "소형 LLM 기반 고객 질의응답 챗봇 프로토타입",
+    title: "소형 LLM 기반 고객 질의응답 챗봇 개발",
     type: "Work Project / AI / LLM / Backend",
     period: "2025.06 ~ 2026.01",
     stack: [
@@ -167,39 +167,6 @@ export const projects = [
     details: [
       "클라이언트 요구사항 기반 소규모 웹사이트 제작 및 배포 경험",
       "화면 구성, Node.js 기반 API 개발, AWS 배포, 피드백 반영 수행",
-    ],
-  },
-];
-
-export const experiences = [
-  {
-    company: "(주)갈렙에이비씨",
-    role: "개발팀 / 사원",
-    period: "2025.03 ~ 2026.01",
-    details: [
-      "소형 LLM 챗봇 프로토타입 개발",
-      "Python 병원 데이터 크롤링 자동화 시스템 개발",
-      "Java/JSP 기반 백엔드 서비스 유지보수 및 REST API 개발",
-      "운영 중 발생한 오류 원인 분석, 예외 처리 개선, API 응답 구조 정리",
-    ],
-  },
-  {
-    company: "(주)에이치엔서브",
-    role: "하나금융 파견 아르바이트",
-    period: "2022.12 ~ 2023.02",
-    details: [
-      "챗봇 개발을 위한 금융 도메인 데이터 라벨링 및 검수",
-      "질의응답 데이터 정리 및 업무 지원",
-    ],
-  },
-  {
-    company: "한양대학교 NLP 연구실",
-    role: "인턴",
-    period: "2021.12 ~ 2022.02",
-    details: [
-      "챗봇 개발을 위한 대화 데이터 수집 및 분석",
-      "NLP 학습 데이터 정리 및 검증",
-      "모델 파인튜닝을 위한 학습 데이터 정리 및 검수",
     ],
   },
 ];

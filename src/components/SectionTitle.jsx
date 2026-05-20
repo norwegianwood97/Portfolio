@@ -8,7 +8,11 @@ export default function SectionTitle({
 
   return (
     <div className="mb-10 max-w-3xl">
-      <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">
+      <p
+        className={`mb-3 text-xs font-bold uppercase tracking-[0.18em] ${
+          isDark ? 'text-cyan-200' : 'text-cyan-700'
+        }`}
+      >
         {eyebrow}
       </p>
       <h2

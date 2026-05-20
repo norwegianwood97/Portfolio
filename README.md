@@ -1,6 +1,6 @@
 # 최준혁 Portfolio
 
-배포 링크: https://norwegianwood97.github.io/Portfolio_260514/
+배포 링크: https://norwegianwood97.github.io/PortfolioSite/
 
 React, Vite, Tailwind CSS로 만든 Backend / AI Agent Engineer 포트폴리오입니다.
 
@@ -10,11 +10,10 @@ Java/JSP 기반 백엔드 유지보수, Python 자동화, 소형 LLM 챗봇 프�
 
 주요 섹션은 다음과 같습니다.
 
-- Hero: 포지셔닝 문구, Notion Portfolio, GitHub, Email 복사 버튼
+- Home: 포지셔닝 문구, 프로필 사진, GitHub / Email 버튼
 - About: 백엔드 실무와 AI 활용 경험 설명
 - Skills: 프로젝트 기반 기술 스택 분류
 - Projects: 프로젝트별 기간, 기술 스택, 담당 업무, 성과
-- Experience: 회사명, 역할, 기간, 주요 업무 타임라인
 
 ## 기술 스택
 
@@ -60,21 +59,29 @@ npm run preview
 Vite base 설정은 GitHub Pages 프로젝트 주소에 맞춰 유지합니다.
 
 ```js
-base: "/Portfolio_260514/",
+base: "/PortfolioSite/",
 ```
 
 ## 정보 수정
 
 포트폴리오의 주요 데이터는 `src/data/portfolio.js`에서 수정합니다.
 
-- 이름, 타이틀, Hero/About 문구
+- 이름, 타이틀, Home/About 문구
 - Skills
 - Projects
-- Experience
 
-Hero 버튼 링크와 이메일 주소는 `src/components/Hero.jsx`에서 수정합니다.
+Home 버튼 링크와 이메일 주소는 `src/components/Home.jsx`에서 수정합니다.
 
-Hero 배경 이미지는 `public/assets/hero-ai-engineer.png`에 있습니다.
+각 페이지 공통 배경 이미지는 `public/assets/home-ai-engineer.png`에 있습니다.
+
+Home 프로필 이미지는 `public/assets/profile.png`에 있습니다.
+
+페이지 이동은 GitHub Pages 새로고침 404를 피하기 위해 Hash route 방식으로 구성했습니다.
+
+- Home: `#/`
+- About: `#/about`
+- Skills: `#/skills`
+- Projects: `#/projects`
 
 ## Git 추적 제외
 
@@ -108,7 +115,7 @@ Backend / AI Agent Engineer portfolio built with React, Vite, Tailwind CSS
 Website:
 
 ```text
-https://norwegianwood97.github.io/Portfolio_260514/
+https://norwegianwood97.github.io/PortfolioSite/
 ```
 
 Topics:
