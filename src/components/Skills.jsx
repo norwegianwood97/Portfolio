@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import PageSection from "./PageSection.jsx";
 import SectionTitle from "./SectionTitle.jsx";
 import { skills } from "../data/portfolio.js";
+import { containerVariants, itemVariants } from "../utils/animations.js";
 
 export default function Skills() {
   return (
@@ -13,10 +15,14 @@ export default function Skills() {
           tone="dark"
         />
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          variants={containerVariants}
+          className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+        >
           {skills.map((group) => (
-            <section
+            <motion.section
               key={group.category}
+              variants={itemVariants}
               className="rounded-lg border border-white/20 bg-white/10 p-6 shadow-xl shadow-navy-950/20 backdrop-blur"
             >
               <h3 className="text-sm font-bold text-cyan-200">
@@ -32,9 +38,9 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-            </section>
+            </motion.section>
           ))}
-        </div>
+        </motion.div>
       </div>
     </PageSection>
   );

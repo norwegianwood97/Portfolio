@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import { Check, Github, Mail } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import PageSection from "./PageSection.jsx";
 import { profile } from "../data/portfolio.js";
+import { containerVariants, itemVariants } from "../utils/animations.js";
 
 const emailAddress = "jhchoi1997@gmail.com";
 const profileImage = `${import.meta.env.BASE_URL}assets/profile.png`;
@@ -67,18 +69,30 @@ export default function Home() {
       id="home"
       className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_320px]"
     >
-      <div className="max-w-3xl">
-        <p className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur">
+      <motion.div variants={containerVariants} className="max-w-3xl">
+        <motion.p
+          variants={itemVariants}
+          className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur"
+        >
           Choi Joon Heok
-        </p>
-        <h1 className="text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-4xl">
+        </motion.p>
+        <motion.h1
+          variants={itemVariants}
+          className="text-5xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-4xl"
+        >
           {profile.homeTitle}
-        </h1>
-        <p className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+        </motion.h1>
+        <motion.p
+          variants={itemVariants}
+          className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg"
+        >
           {profile.summary}
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <motion.div
+          variants={itemVariants}
+          className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+        >
           <a
             href="https://github.com/norwegianwood97"
             className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
@@ -96,10 +110,13 @@ export default function Home() {
             <Mail size={18} aria-hidden="true" />
             Email
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="justify-self-center lg:justify-self-end">
+      <motion.div
+        variants={itemVariants}
+        className="justify-self-center lg:justify-self-end"
+      >
         <div className="rounded-2xl border border-white/20 bg-white/10 p-3 shadow-xl shadow-navy-950/35 backdrop-blur">
           <img
             src={profileImage}
@@ -107,7 +124,7 @@ export default function Home() {
             className="aspect-[4/5] w-[min(72vw,260px)] rounded-xl object-cover ring-1 ring-white/25"
           />
         </div>
-      </div>
+      </motion.div>
 
       {showToast && (
         <div

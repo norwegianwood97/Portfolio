@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import PageSection from "./PageSection.jsx";
 import SectionTitle from "./SectionTitle.jsx";
 import { projects } from "../data/portfolio.js";
+import { containerVariants, itemVariants } from "../utils/animations.js";
 
 export default function Projects() {
   return (
@@ -12,10 +14,14 @@ export default function Projects() {
           tone="dark"
         />
 
-        <div className="grid gap-5 lg:grid-cols-2">
+        <motion.div
+          variants={containerVariants}
+          className="grid gap-5 lg:grid-cols-2"
+        >
           {projects.map((project) => (
-            <article
+            <motion.article
               key={project.title}
+              variants={itemVariants}
               className="group flex flex-col rounded-lg border border-white/20 bg-white/10 p-6 shadow-xl shadow-navy-950/20 backdrop-blur transition hover:-translate-y-1 hover:border-cyan-200 hover:bg-white/15"
             >
               <div>
@@ -57,9 +63,9 @@ export default function Projects() {
                   {project.highlight}
                 </p>
               )}
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </PageSection>
   );

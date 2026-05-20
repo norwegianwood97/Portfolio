@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { itemVariants } from "../utils/animations.js";
+
 export default function SectionTitle({
   eyebrow,
   title,
@@ -7,7 +10,7 @@ export default function SectionTitle({
   const isDark = tone === 'dark';
 
   return (
-    <div className="mb-10 max-w-3xl">
+    <motion.div variants={itemVariants} className="mb-10 max-w-3xl">
       <p
         className={`mb-3 text-xs font-bold uppercase tracking-[0.18em] ${
           isDark ? 'text-cyan-200' : 'text-cyan-700'
@@ -31,6 +34,6 @@ export default function SectionTitle({
           {description}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 }

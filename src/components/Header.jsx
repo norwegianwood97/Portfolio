@@ -21,7 +21,7 @@ export default function Header({ currentPath = "/" }) {
           className="focus-ring text-sm font-bold text-navy-950 transition hover:text-cyan-700"
           onClick={closeMenu}
         >
-          Choi's Portfolio
+          Choi's
         </a>
 
         <div className="hidden items-center gap-7 md:flex">
@@ -29,10 +29,10 @@ export default function Header({ currentPath = "/" }) {
             <a
               key={item.href}
               href={item.href}
-              className={`focus-ring text-sm transition hover:text-navy-900 ${
+              className={`focus-ring rounded-full px-3 py-2 text-sm transition ${
                 currentPath === item.path
-                  ? "font-semibold text-navy-950 underline decoration-cyan-500 decoration-2 underline-offset-8"
-                  : "font-medium text-slate-600"
+                  ? "bg-cyan-50 font-semibold text-navy-950 shadow-sm ring-1 ring-cyan-100"
+                  : "font-medium text-slate-600 hover:bg-slate-50 hover:text-navy-900"
               }`}
               aria-current={currentPath === item.path ? "page" : undefined}
             >
@@ -62,9 +62,9 @@ export default function Header({ currentPath = "/" }) {
               <a
                 key={item.href}
                 href={item.href}
-                className={`focus-ring rounded-lg px-2 py-3 text-sm transition hover:bg-navy-50 hover:text-navy-900 ${
+                className={`focus-ring rounded-lg px-3 py-3 text-sm transition hover:bg-navy-50 hover:text-navy-900 ${
                   currentPath === item.path
-                    ? "font-semibold text-navy-950"
+                    ? "bg-cyan-50 font-semibold text-navy-950 ring-1 ring-cyan-100"
                     : "font-medium text-slate-700"
                 }`}
                 onClick={closeMenu}

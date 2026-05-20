@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import PageSection from "./PageSection.jsx";
 import SectionTitle from "./SectionTitle.jsx";
+import { containerVariants, itemVariants } from "../utils/animations.js";
 
 const education = [
   {
@@ -64,52 +66,69 @@ export default function About() {
   return (
     <PageSection id="about" className="flex items-center">
       <div className="w-full">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.35fr)]">
+        <SectionTitle eyebrow="About" title="학력, 경력, 어학 이력" tone="dark" />
+
+        <motion.div
+          variants={containerVariants}
+          className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.35fr)]"
+        >
           <div className="space-y-6">
-            <section>
+            <motion.section variants={itemVariants}>
               <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
                 학력
               </h3>
-              <div className="space-y-3">
+              <motion.div variants={containerVariants} className="space-y-3">
                 {education.map((item) => (
-                  <article key={item.title} className={cardClass}>
+                  <motion.article
+                    key={item.title}
+                    variants={itemVariants}
+                    className={cardClass}
+                  >
                     <h4 className="text-base font-semibold leading-7">
                       {item.title}
                     </h4>
                     <p className="mt-1 text-sm font-medium text-slate-300">
                       {item.period}
                     </p>
-                  </article>
+                  </motion.article>
                 ))}
-              </div>
-            </section>
+              </motion.div>
+            </motion.section>
 
-            <section>
+            <motion.section variants={itemVariants}>
               <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
                 어학
               </h3>
-              <div className="space-y-3">
+              <motion.div variants={containerVariants} className="space-y-3">
                 {languages.map((item) => (
-                  <article key={item.title} className={cardClass}>
+                  <motion.article
+                    key={item.title}
+                    variants={itemVariants}
+                    className={cardClass}
+                  >
                     <h4 className="text-base font-semibold leading-7">
                       {item.title}
                     </h4>
                     <p className="mt-1 text-sm font-medium text-slate-300">
                       {item.period}
                     </p>
-                  </article>
+                  </motion.article>
                 ))}
-              </div>
-            </section>
+              </motion.div>
+            </motion.section>
           </div>
 
-          <section>
+          <motion.section variants={itemVariants}>
             <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-cyan-200">
               경력
             </h3>
-            <div className="space-y-4">
+            <motion.div variants={containerVariants} className="space-y-4">
               {careers.map((career) => (
-                <article key={career.title} className={cardClass}>
+                <motion.article
+                  key={career.title}
+                  variants={itemVariants}
+                  className={cardClass}
+                >
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <h4 className="text-base font-semibold leading-7">
                       {career.title}
@@ -126,11 +145,11 @@ export default function About() {
                       </li>
                     ))}
                   </ul>
-                </article>
+                </motion.article>
               ))}
-            </div>
-          </section>
-        </div>
+            </motion.div>
+          </motion.section>
+        </motion.div>
       </div>
     </PageSection>
   );
