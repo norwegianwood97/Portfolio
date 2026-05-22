@@ -17,7 +17,7 @@ const PROJECTS = [
     title: "STOCKING",
     subtitle: "모의 주식 투자 서비스",
     description:
-      "모의 주식 주문·체결 흐름을 구현한 팀 프로젝트입니다. 주문 API, DB 트랜잭션, WebSocket 통신, 메시지 큐 도입, 서버 분리 및 배포 자동화를 담당했고, TPS 개선과 응답시간 감소를 경험했습니다.",
+      "모의 주식 주문·체결 흐름을 구현한 팀 프로젝트입니다. 주문 API, DB 트랜잭션, WebSocket 통신, 메시지 큐 도입, 서버 분리 및 배포 자동화를 담당했습니다.",
     contributions: [
       "주문 API, 클라이언트 개발",
       "DB 트랜잭션, Multi-AZ, Read Replica 적용",

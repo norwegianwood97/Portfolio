@@ -125,7 +125,7 @@ export function OutlineButton({ children, href, icon: Icon }) {
 /* ─────────────────────────────────────────────────────────
    CodeEditor — Home 페이지 우측의 yaml 에디터 mockup
    ───────────────────────────────────────────────────────── */
-export function CodeEditor({ filename = "whoami.yaml", children }) {
+export function CodeEditor({ filename = "WhoAmI.yaml", children }) {
   return (
     <div className="bg-ink-900 rounded-lg border border-ink-700 overflow-hidden">
       <div className="bg-ink-800 px-3 py-2 flex gap-1.5 items-center border-b border-ink-700">
@@ -183,7 +183,7 @@ export function SkillCard({
         <Icon size={18} />
       </div>
       <div className="text-ink-100 font-medium text-sm mb-1">{title}</div>
-      <div className="text-ink-500 text-xs leading-relaxed mb-3">{desc}</div>
+      <div className="text-ink-300 text-sm leading-relaxed mb-3">{desc}</div>
       <div>
         {tags.map((t) => (
           <Tag key={t}>{t}</Tag>
@@ -237,7 +237,7 @@ export function CareerItem({ title, badge, desc }) {
           </span>
         )}
       </div>
-      <div className="text-xs text-ink-500 leading-relaxed">{desc}</div>
+      <div className="text-sm text-ink-300 leading-relaxed">{desc}</div>
     </div>
   );
 }

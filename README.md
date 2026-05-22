@@ -1,4 +1,4 @@
-# Choi JoonHeok Portfolio
+# Personal Portfolio
 
 배포 링크: https://norwegianwood97.github.io/Portfolio/
 
