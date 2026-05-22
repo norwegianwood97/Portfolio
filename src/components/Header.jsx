@@ -15,11 +15,11 @@ export default function Header({ currentPath = "/" }) {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white backdrop-blur">
       <nav className="section-shell flex h-16 items-center justify-between">
         <a
           href="#/"
-          className="focus-ring text-sm font-bold text-navy-950 transition hover:text-cyan-700"
+          className="focus-ring text-sm font-bold text-slate-950 transition hover:text-slate-700"
           onClick={closeMenu}
         >
           Choi's
@@ -32,8 +32,8 @@ export default function Header({ currentPath = "/" }) {
               href={item.href}
               className={`focus-ring rounded-full px-3 py-2 text-sm transition ${
                 currentPath === item.path
-                  ? "bg-cyan-50 font-semibold text-navy-950 shadow-sm ring-1 ring-cyan-100"
-                  : "font-medium text-slate-600 hover:bg-slate-50 hover:text-navy-900"
+                  ? "bg-slate-100 font-semibold text-slate-950"
+                  : "font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-950"
               }`}
               aria-current={currentPath === item.path ? "page" : undefined}
             >
@@ -44,7 +44,7 @@ export default function Header({ currentPath = "/" }) {
 
         <button
           type="button"
-          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-navy-900 md:hidden"
+          className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-900 md:hidden"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsOpen((value) => !value)}
         >
@@ -63,9 +63,9 @@ export default function Header({ currentPath = "/" }) {
               <a
                 key={item.href}
                 href={item.href}
-                className={`focus-ring rounded-lg px-3 py-3 text-sm transition hover:bg-navy-50 hover:text-navy-900 ${
+                className={`focus-ring rounded-lg px-3 py-3 text-sm transition hover:bg-slate-100 hover:text-slate-950 ${
                   currentPath === item.path
-                    ? "bg-cyan-50 font-semibold text-navy-950 ring-1 ring-cyan-100"
+                    ? "bg-slate-100 font-semibold text-slate-950"
                     : "font-medium text-slate-700"
                 }`}
                 onClick={closeMenu}

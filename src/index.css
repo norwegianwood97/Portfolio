@@ -23,7 +23,7 @@ body {
 
 ::selection {
   color: #ffffff;
-  background: #17365f;
+  background: #0f172a;
 }
 
 .section-shell {
@@ -31,5 +31,5 @@ body {
 }
 
 .focus-ring {
-  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-500;
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-400;
 }

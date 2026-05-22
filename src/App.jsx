@@ -43,16 +43,7 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <div className="min-h-screen bg-white text-slate-900">
         <Header currentPath={currentPath} />
-        <main className="relative isolate min-h-[calc(100vh-8.5rem)] overflow-hidden bg-navy-950">
-          <img
-            src={`${import.meta.env.BASE_URL}assets/home-ai-engineer.png`}
-            alt=""
-            className="fixed inset-0 z-0 h-screen w-screen object-cover"
-            aria-hidden="true"
-          />
-          <div className="fixed inset-0 z-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/45" />
-          <div className="fixed inset-x-0 bottom-0 z-0 h-36 bg-gradient-to-t from-navy-950 to-transparent" />
-
+        <main className="relative isolate min-h-[calc(100vh-8.5rem)] overflow-hidden bg-slate-50">
           <div className="relative z-10">
             <AnimatePresence mode="wait">
               <motion.div
