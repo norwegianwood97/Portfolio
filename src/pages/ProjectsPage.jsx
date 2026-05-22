@@ -13,7 +13,7 @@ function PageSection({
     <section id={id} className={textClassName}>
       <motion.div
         variants={containerVariants}
-        className={`section-shell min-h-[calc(100vh-5.5rem)] py-16 sm:py-20 lg:py-24 ${className}`}
+        className={`section-shell min-h-[calc(100vh-7rem)] py-12 sm:py-14 lg:py-16 ${className}`}
       >
         {children}
       </motion.div>

@@ -1,7 +1,6 @@
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import SkillsPage from "./pages/SkillsPage.jsx";
@@ -41,9 +40,9 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-white text-slate-900">
+      <div className="flex min-h-screen flex-col bg-white text-slate-900">
         <Header currentPath={currentPath} />
-        <main className="relative isolate min-h-[calc(100vh-8.5rem)] overflow-hidden bg-slate-50">
+        <main className="relative isolate flex-1 overflow-hidden bg-slate-50">
           <div className="relative z-10">
             <AnimatePresence mode="wait">
               <motion.div
@@ -58,7 +57,9 @@ export default function App() {
             </AnimatePresence>
           </div>
         </main>
-        <Footer />
+        <div className="border-t border-slate-200 bg-white py-2 text-center text-xs text-slate-400">
+          Copyright © 2026
+        </div>
       </div>
     </MotionConfig>
   );
