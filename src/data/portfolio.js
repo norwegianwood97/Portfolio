@@ -7,8 +7,7 @@ export const profile = {
   aboutSections: [
     {
       title: "백엔드 유지보수",
-      description:
-        "Java/JSP 기반 병원 원가관리·분석 솔루션 기능 수정, 개발, 오류 해결",
+      description: "Java/JSP 기반 솔루션 기능 수정, 개발, 오류 해결",
     },
     {
       title: "업무 자동화",
@@ -58,8 +57,7 @@ export const skills = [
 export const projects = [
   {
     title: "STOCKING — 모의 주식 투자 서비스",
-    subtitle:
-      "항해99 기수 최우수 프로젝트 · 백엔드 개발 / 주문 API / 성능 개선 / 팀 리딩",
+    subtitle: "백엔드 개발 / 주문 API / 성능 개선 / 팀 리딩",
     description:
       "모의 주식 주문·체결 흐름을 구현한 팀 프로젝트입니다. 주문 API, DB 트랜잭션, WebSocket 통신, 메시지 큐 도입, 서버 분리 및 배포 자동화 작업을 담당했고, TPS 개선과 평균 응답시간 감소를 경험했습니다.",
     contributions: [
@@ -74,9 +72,8 @@ export const projects = [
       "TPS 77.6/s → 590.3/s",
       "평균 응답시간 1211.3ms → 177ms",
       "10만 건 부하 테스트 수행",
-      "항해99 기수 최우수 프로젝트 선정",
+      "해당 기수 최우수 프로젝트 선정",
     ],
-    tech: "Node.js · MySQL · Redis · Kafka · WebSocket · Docker · AWS ECR/ECS/ALB · GitHub Actions · JMeter",
     link: "https://treasure-flare-e03.notion.site/Stocking-aa7272eb4edf442cb31bd183e1582908?pvs=143",
     repositories: [
       {
@@ -101,6 +98,43 @@ export const education = [
     period: "2016.02",
   },
 ];
+
+export const career = {
+  title: "Career",
+  company: "㈜갈렙에이비씨",
+  department: "개발팀",
+  role: "백엔드/AI 자동화 개발",
+  period: "2025.02 - 2026.01",
+  techStack:
+    "Java · JSP · Spring · JavaScript · PostgreSQL · SVN/GitLab · Git · Python · AWS",
+  items: [
+    {
+      title: "백엔드 유지보수",
+      description:
+        "Java/JSP 기반 병원 원가관리·분석 솔루션 기능 수정, 개발, 운영 오류 대응",
+    },
+    {
+      title: "업무 자동화",
+      description:
+        "Python 크롤링 자동화 시스템을 개발해 병원 데이터 수집 시간을 약 180시간에서 1시간 수준으로 단축",
+    },
+    {
+      title: "챗봇 시스템 개발",
+      description:
+        "고객 문의 데이터를 기반으로 LLaMA 계열 sLLM을 파인튜닝하고, 사내 문서 벡터 DB 기반 RAG 파이프라인을 구성하여 챗봇 개발",
+    },
+    {
+      title: "레거시 환경 개선",
+      description:
+        "C#, Windows 7 및 .NET 3.5 기반 솔루션을 최신화하고 빌드 오류 해결",
+    },
+    {
+      title: "협업 프로세스 개선",
+      description:
+        "SVN 기반 형상관리 환경을 GitLab으로 마이그레이션하여 Merge Request 기반 코드 리뷰 프로세스 도입",
+    },
+  ],
+};
 
 export const trainingActivities = [
   {
