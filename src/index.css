@@ -1,29 +1,44 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color: #0f172a;
-  background: #ffffff;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: #7C3AED;
+    color: #F5F5FA;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-::selection {
-  color: #ffffff;
-  background: #0f172a;
+@layer utilities {
+  .text-grad {
+    background: linear-gradient(90deg, #A78BFA 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glow-purple {
+    @apply absolute top-0 left-0 w-[400px] h-[400px] bg-accent-purple/10 rounded-full blur-3xl pointer-events-none;
+  }
+  .glow-cyan {
+    @apply absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none;
+  }
 }
 
 .section-shell {

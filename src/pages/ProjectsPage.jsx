@@ -1,115 +1,115 @@
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import { projects } from "../data/portfolio.js";
-import SectionTitle from "../components/SectionTitle.jsx";
-import { containerVariants, itemVariants } from "../utils/animations.js";
+import {
+  PageShell,
+  Eyebrow,
+  PageHeading,
+  Tag,
+  Bullet,
+  MetricBox,
+  PrimaryButton,
+  OutlineButton,
+  ExternalLink,
+  Github,
+} from "../components";
 
-function PageSection({
-  id,
-  children,
-  className = "",
-  textClassName = "text-slate-900",
-}) {
-  return (
-    <section id={id} className={textClassName}>
-      <motion.div
-        variants={containerVariants}
-        className={`section-shell min-h-[calc(100vh-7rem)] py-12 sm:py-14 lg:py-16 ${className}`}
-      >
-        {children}
-      </motion.div>
-    </section>
-  );
-}
+const PROJECTS = [
+  {
+    tags: ["백엔드 개발", "주문 API", "성능 개선", "팀 리딩"],
+    title: "STOCKING",
+    subtitle: "모의 주식 투자 서비스",
+    description:
+      "모의 주식 주문·체결 흐름을 구현한 팀 프로젝트입니다. 주문 API, DB 트랜잭션, WebSocket 통신, 메시지 큐 도입, 서버 분리 및 배포 자동화를 담당했고, TPS 개선과 응답시간 감소를 경험했습니다.",
+    contributions: [
+      "주문 API, 클라이언트 개발",
+      "DB 트랜잭션, Multi-AZ, Read Replica 적용",
+      "WebSocket 기반 서버 간·클라이언트 통신 구현",
+      "Kafka 기반 메시지 큐 도입 및 서버 분리",
+      "Docker / GitHub Actions 기반 배포 자동화",
+      "테스트 코드 작성, 리팩토링, 발표 및 팀 리딩",
+    ],
+    metrics: [
+      { value: "7.6×", label: "TPS 77.6 → 590.3", highlight: true },
+      { value: "85% ↓", label: "응답시간 1211 → 177ms", highlight: true },
+      { value: "100K", label: "부하 테스트 수행" },
+      { value: "Best Project", label: "항해99 기수 프로젝트 선정" },
+    ],
+    links: {
+      notion:
+        "https://treasure-flare-e03.notion.site/Stocking-aa7272eb4edf442cb31bd183e1582908?pvs=143",
+      backend: "https://github.com/norwegianwood97/Stocking_Backend",
+      frontend: "https://github.com/norwegianwood97/Stocking_Frontend",
+    },
+  },
+];
 
 export default function ProjectsPage() {
   return (
-    <PageSection id="projects">
-      <div className="w-full">
-        <SectionTitle
-          eyebrow="Projects"
-          title="구현하고 개선한 경험"
-          description=""
-        />
+    <PageShell active="Projects">
+      <Eyebrow>Projects</Eyebrow>
+      <PageHeading>구현하고 개선한 경험</PageHeading>
 
-        <motion.div variants={containerVariants} className="grid gap-5">
-          {projects.map((project) => (
-            <motion.article
-              key={project.title}
-              variants={itemVariants}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 text-slate-900 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <p className="text-sm font-bold text-slate-500">
-                {project.subtitle}
-              </p>
-              <h3 className="mt-3 text-2xl font-bold leading-8 text-slate-950">
-                {project.title}
-              </h3>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
-                {project.description}
-              </p>
-
-              {project.contributions && (
-                <div className="mt-6">
-                  <h4 className="text-sm font-bold text-slate-950">
-                    Role / Contributions
-                  </h4>
-                  <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                    {project.contributions.map((contribution) => (
-                      <li
-                        key={contribution}
-                        className="flex gap-2 text-sm leading-6 text-slate-600"
-                      >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
-                        <span>{contribution}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {project.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700"
-                  >
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-6 text-sm font-semibold leading-7 text-slate-500">
-                {project.tech}
-              </p>
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href={project.link}
-                  className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <ExternalLink size={18} aria-hidden="true" />
-                  Notion
-                </a>
-                {project.repositories?.map((repository) => (
-                  <a
-                    key={repository.href}
-                    href={repository.href}
-                    className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-800 transition hover:-translate-y-0.5 hover:bg-slate-100"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Github size={18} aria-hidden="true" />
-                    {repository.label}
-                  </a>
-                ))}
-              </div>
-            </motion.article>
-          ))}
-        </motion.div>
+      <div className="flex flex-col gap-6">
+        {PROJECTS.map((p, idx) => (
+          <ProjectCard key={idx} {...p} />
+        ))}
       </div>
-    </PageSection>
+    </PageShell>
+  );
+}
+
+function ProjectCard({
+  tags,
+  title,
+  subtitle,
+  description,
+  contributions,
+  metrics,
+  links,
+}) {
+  return (
+    <article className="bg-ink-900 border border-ink-700 rounded-xl p-6 sm:p-8">
+      {/* 카테고리 태그 */}
+      <div className="mb-3">
+        {tags.map((t) => (
+          <Tag key={t}>{t}</Tag>
+        ))}
+      </div>
+
+      {/* 타이틀 */}
+      <h2 className="text-xl sm:text-2xl font-medium tracking-tight mb-2">
+        <span className="text-grad">{title}</span>
+        <span className="text-ink-300"> — {subtitle}</span>
+      </h2>
+
+      {/* 디스크립션 */}
+      <p className="text-sm text-ink-500 leading-relaxed mb-5">{description}</p>
+
+      {/* Role / Contributions */}
+      <Eyebrow>Role / Contributions</Eyebrow>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 mb-6">
+        {contributions.map((c, i) => (
+          <Bullet key={i}>{c}</Bullet>
+        ))}
+      </div>
+
+      {/* Metrics */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+        {metrics.map((m, i) => (
+          <MetricBox key={i} {...m} />
+        ))}
+      </div>
+
+      {/* 링크 버튼 */}
+      <div className="flex flex-wrap gap-2">
+        <PrimaryButton href={links.notion} icon={ExternalLink}>
+          Notion
+        </PrimaryButton>
+        <OutlineButton href={links.backend} icon={Github}>
+          BE Repository
+        </OutlineButton>
+        <OutlineButton href={links.frontend} icon={Github}>
+          FE Repository
+        </OutlineButton>
+      </div>
+    </article>
   );
 }
