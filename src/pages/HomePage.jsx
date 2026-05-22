@@ -71,7 +71,7 @@ export default function HomePage() {
         <div>
           <CodeEditor filename="whoami.yaml">
             <YamlLine k="name" v="Choi JoonHeok" />
-            <YamlLine k="role" v="backend engineer" />
+            <YamlLine k="role" v="Backend Engineer · AI/LLM Integration" />
             <YamlLine k="stack" />
             <YamlListItem>Java · JSP · Spring</YamlListItem>
             <YamlListItem>PostgreSQL · AWS</YamlListItem>
