@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import SkillsPage from "./pages/SkillsPage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
+import ExperiencePage from "./pages/ExperiencePage.jsx";
 import { pageVariants } from "./utils/animations.js";
 
 const routes = {
@@ -13,6 +14,7 @@ const routes = {
   "/about": AboutPage,
   "/skills": SkillsPage,
   "/projects": ProjectsPage,
+  "/experience": ExperiencePage,
 };
 
 function getHashPath() {

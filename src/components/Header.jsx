@@ -6,6 +6,7 @@ const navItems = [
   { label: "About", href: "#/about", path: "/about" },
   { label: "Skills", href: "#/skills", path: "/skills" },
   { label: "Projects", href: "#/projects", path: "/projects" },
+  { label: "Experience", href: "#/experience", path: "/experience" },
 ];
 
 export default function Header({ currentPath = "/" }) {
@@ -24,7 +25,7 @@ export default function Header({ currentPath = "/" }) {
           Choi's
         </a>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-4 md:flex lg:gap-7">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -44,7 +45,7 @@ export default function Header({ currentPath = "/" }) {
         <button
           type="button"
           className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-navy-900 md:hidden"
-          aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsOpen((value) => !value)}
         >
           {isOpen ? (

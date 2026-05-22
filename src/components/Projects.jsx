@@ -10,7 +10,8 @@ export default function Projects() {
       <div className="w-full">
         <SectionTitle
           eyebrow="Projects"
-          title="Backend, AI, 자동화 중심 프로젝트"
+          title="성능 개선과 AI Agent 실행 환경을 보여주는 대표 프로젝트"
+          description="실무 상세 경험은 Experience에 배치하고, Projects에는 STOCKING과 OpenClaw 서버 구축 실습을 중심으로 정리했습니다."
           tone="dark"
         />
 
@@ -31,6 +32,11 @@ export default function Projects() {
                 {project.period && (
                   <p className="mt-2 text-sm font-semibold text-slate-300">
                     {project.period}
+                  </p>
+                )}
+                {project.role && (
+                  <p className="mt-1 text-sm font-semibold text-slate-300">
+                    {project.role}
                   </p>
                 )}
                 <h3 className="mt-3 text-xl font-bold leading-8 text-white">
@@ -59,7 +65,7 @@ export default function Projects() {
               </ul>
 
               {project.highlight && (
-                <p className="mt-6 rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm font-bold text-white">
+                <p className="mt-6 rounded-lg border border-cyan-200/40 bg-cyan-200/10 px-4 py-3 text-sm font-bold text-white">
                   {project.highlight}
                 </p>
               )}

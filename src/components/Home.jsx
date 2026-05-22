@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { Check, Github, Mail } from "lucide-react";
+import { Check, Download, Github, Mail } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import PageSection from "./PageSection.jsx";
-import { profile } from "../data/portfolio.js";
+import { heroBadges, profile } from "../data/portfolio.js";
 import { containerVariants, itemVariants } from "../utils/animations.js";
 
 const emailAddress = "jhchoi1997@gmail.com";
@@ -30,6 +30,7 @@ export default function Home() {
   const [isToastVisible, setIsToastVisible] = useState(false);
   const toastTimerRef = useRef(null);
   const hideTimerRef = useRef(null);
+  const resumeUrl = `${import.meta.env.BASE_URL}assets/choi-junhyeok-resume.pdf`;
 
   useEffect(() => {
     return () => {
@@ -74,7 +75,7 @@ export default function Home() {
           variants={itemVariants}
           className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur"
         >
-          Choi Joon Heok
+          {profile.name}
         </motion.p>
         <motion.h1
           variants={itemVariants}
@@ -84,15 +85,44 @@ export default function Home() {
         </motion.h1>
         <motion.p
           variants={itemVariants}
-          className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg"
+          className="mt-7 max-w-2xl text-base leading-8 text-slate-100 sm:text-lg"
+        >
+          {profile.subtitle}
+        </motion.p>
+        <motion.p
+          variants={itemVariants}
+          className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base"
         >
           {profile.summary}
         </motion.p>
 
         <motion.div
           variants={itemVariants}
+          className="mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4"
+        >
+          {heroBadges.map((badge) => (
+            <span
+              key={badge}
+              className="rounded-lg border border-white/20 bg-white/10 px-3 py-3 text-center text-xs font-bold leading-5 text-white shadow-lg shadow-navy-950/20 backdrop-blur"
+            >
+              {badge}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
           className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
         >
+          <a
+            href={resumeUrl}
+            className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-300 px-5 py-3 text-sm font-bold text-navy-950 shadow-lg shadow-cyan-950/20 transition hover:-translate-y-0.5 hover:bg-cyan-200"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Download size={18} aria-hidden="true" />
+            이력서 다운로드
+          </a>
           <a
             href="https://github.com/norwegianwood97"
             className="focus-ring inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
@@ -120,7 +150,7 @@ export default function Home() {
         <div className="rounded-2xl border border-white/20 bg-white/10 p-3 shadow-xl shadow-navy-950/35 backdrop-blur">
           <img
             src={profileImage}
-            alt="최준혁 프로필 사진"
+            alt="Choi JoonHeok profile"
             className="aspect-[4/5] w-[min(72vw,260px)] rounded-xl object-cover ring-1 ring-white/25"
           />
         </div>
@@ -141,7 +171,7 @@ export default function Home() {
             className="shrink-0 text-cyan-300"
             aria-hidden="true"
           />
-          <span>이메일이 복사되었습니다</span>
+          <span>Email copied.</span>
         </div>
       )}
     </PageSection>
