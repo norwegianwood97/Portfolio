@@ -8,6 +8,7 @@ dist/
 .env
 .env.*
 !.env.example
+agents.md
 
 # Logs
 logs/
@@ -33,5 +34,4 @@ Thumbs.db
 
 # Test / coverage
 coverage/
-
 .lh/
